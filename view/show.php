@@ -23,9 +23,15 @@
                     <button type="submit" autocomplete="off" class="btn btn-primary d-flex align-items-center gap-1" <?php if(isset($_GET['_search'])){echo $_GET['_search'];} ?>><i class="fa-solid fa-magnifying-glass"></i> Search</button>
                 </form>
                 <button class="btn btn-primary" id="open-add" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-circle-plus"></i> Add Product</button>
-                <a href="./restore/restorePage.php">
-                    <button class="btn btn-danger" name="_restore-btn"><i class="fa-solid fa-trash-arrow-up"></i> Restore</button>
-                </a>
+                <button class="btn btn-danger" <?php include 'PHP/disableBtn.php'; ?> name="_restore-btn">
+                    <a class="text-decoration-none text-white position-relative " href="./restore/restorePage.php">
+                        <i class="fa-solid fa-trash-arrow-up"></i> Restore
+                        <span class="position-absolute translate-middle badge rounded-pill bg-primary" style="top: -8px; right: -33px;">
+                            <?php include 'PHP/countTable.php' ?>
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </a>
+                </button>
             </div>
         </div>
         <div class="container table-container">
