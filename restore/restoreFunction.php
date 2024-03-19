@@ -11,24 +11,24 @@
         $result = $connection->query($sql);
 
         while($row = mysqli_fetch_assoc($result)){
-            echo '
+            ?>
                 <tr>
-                    <td><input class="form-check-input " type="checkbox" name="" id=""></td>
-                    <td>'.$row['id'].'</td>
-                    <td>'.$row['name'].'</td>
-                    <td>'.$row['category'].'</td>
-                    <td>'.$row['brand'].'</td>
-                    <td>'.$row['price'].'</td>
+                    <td><input class="form-check-input " type="checkbox" name="checkbox[]" value="<?php echo $row['id'] ?>"></td>
+                    <td><?=$row['id'] ?></td>
+                    <td><?=$row['name'] ?></td>
+                    <td><?=$row['category'] ?></td>
+                    <td><?=$row['brand'] ?></td>
+                    <td><?=$row['price'] ?></td>
                     <td class="d-flex gap-2">
-                        <form action="" method="post" onsubmit = "return comfirm("Are you sure to delete this record..");">
-                            <button class="btn btn-outline-danger " name="_remove" value="'.$row['id'].'" type="submit"><i class="fa-regular fa-trash-can"></i></button>
+                        <form action="" method="post" onsubmit = "return confirm("Are you sure to delete this record..");">
+                            <button class="btn btn-outline-danger " name="_remove" value="<?=$row['id'] ?>" type="submit"><i class="fa-regular fa-trash-can"></i></button>
                         </form>
                         <form action="" method="post" onsubmit=" return confirm(\'Are you sure to restore this record\')">
-                            <button class="btn btn-primary " name="_restore" type="submit" value="'.$row['id'].'"><i class="fa-solid fa-rotate-left"></i> Restore</button>
+                            <button class="btn btn-primary " name="_restore" type="submit" value="<?=$row['id'] ?>"><i class="fa-solid fa-rotate-left"></i> Restore</button>
                         </form>
                     </td>
                 </tr>
-            ';
+            <?php
         }
     }
     deleted_row();

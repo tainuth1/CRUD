@@ -6,6 +6,7 @@
     <?php
         include ('../link/style.php');
         include ('../link/icon.php');
+        include ('select.php'); 
     ?>
     <title>Restore Data</title>
 </head>
@@ -19,24 +20,24 @@
             </form>
         </div>
         <div class="container"><!--style="width: 1350px; margin: 0 auto;"-->
-            <table class="table align-middle table-hover table-striped " style="table-layout: fixed;">
-                <tr class="table-dark">
-                    <th>
-                        <!-- <input class="form-check-input " type="checkbox" name="" id=""> -->
-                        Select
-                    </th>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Brand</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                </tr>
-                <?php
-                    include 'restoreFunction.php';
-                ?>
-                
-            </table>
+            <form action="" method="post">
+                <table class="table align-middle table-hover table-striped " style="table-layout: fixed;">
+                    <tr class="table-dark">
+                        <th>
+                            <input type="submit" class="btn btn-warning " value="Multi-Restore" name="select_restore">
+                        </th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Brand</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                    <?php
+                        include 'restoreFunction.php';
+                    ?>
+                </table>
+            </form>
         </div>
     </div>
 </body>

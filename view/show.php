@@ -28,7 +28,6 @@
                         <i class="fa-solid fa-trash-arrow-up"></i> Restore
                         <span class="position-absolute translate-middle badge rounded-pill bg-primary" style="top: -8px; right: -33px;">
                             <?php include 'PHP/countTable.php' ?>
-                            <span class="visually-hidden">unread messages</span>
                         </span>
                     </a>
                 </button>
